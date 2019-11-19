@@ -4,6 +4,13 @@
   </div>
 </template>
 
+<script>
+import { mixins } from "./mixins.js";
+export default {
+    mixins: [mixins]
+}
+</script>
+
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
