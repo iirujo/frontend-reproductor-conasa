@@ -1,27 +1,28 @@
 <template>
     <div>
         <Navbar :actionButton="value"/>
-        <SignupForm />
+        <ChangePasswordForm />
         <Footer />
     </div>
 </template>
 
 <script>
 import Navbar from '../Navbar.vue'
-import SignupForm from './SignupForm.vue'
+import ChangePasswordForm from './ChangePasswordForm.vue'
 import Footer from '../Footer.vue'
 export default {
-    name: 'SignupPage',
+    name: 'ChangePasswordPage',
     components: {
-        SignupForm,
         Navbar,
-        Footer
+        ChangePasswordForm,
+        Footer    
     },
-    data(){
+    data() {
         return {
             value: "login"
         }
     }
+    
 }
 </script>
 

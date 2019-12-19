@@ -17,10 +17,10 @@ export default {
         Footer
     },
     name: 'LoginPage',
-    data (){
-    return {
-      value: "signup"
-    }
+    data(){
+        return {
+            value: "signup"
+        }
     }
 }
 </script>

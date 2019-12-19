@@ -7,6 +7,8 @@ import DashboardPage from './components/Dashboard/DashboardPage.vue';
 import ChangePage from './components/Change/ChangePage.vue';
 import SearchPage from './components/Search/SearchPage.vue';
 import SearchResult from './components/Search/SearchResult.vue';
+import RestorePasswordPage from './components/RestorePassword/RestorePasswordPage.vue';
+import ChangePasswordPage from './components/Change/ChangePasswordPage.vue'
 
 Vue.use(Router);
 
@@ -17,7 +19,9 @@ const routes = [
     { path: '/dashboard', name: 'dashboard', component: DashboardPage},
     { path: '/change', name: 'change', component: ChangePage},
     { path: '/search', name: 'search', component: SearchPage},
-    { path: '/search/result', name: 'searchResult', component: SearchResult}
+    { path: '/search/result', name: 'searchResult', component: SearchResult},
+    { path: '/restorePassword', name: 'restorePassword', component: RestorePasswordPage},
+    { path: '/changePassword', name: 'changePassword', component: ChangePasswordPage}
   ]
   
   // 3. Create the router instance and pass the `routes` option

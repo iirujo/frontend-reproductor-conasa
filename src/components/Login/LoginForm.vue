@@ -26,7 +26,7 @@
               <b-spinner v-show="showSpiner" small type="grow"></b-spinner>Login
             </b-button>
             <br>
-            <b-link href="#">
+            <b-link to="/restorePassword" class="my-2">
               Forgot password?
             </b-link>
 
