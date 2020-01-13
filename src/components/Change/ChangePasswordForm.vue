@@ -30,6 +30,8 @@
             </b-card>
         </b-container>
         <div v-else>
+            <br>
+            <br>
             Expired
         </div>
     </div>
@@ -41,15 +43,16 @@ import router from '../../router.js';
 const formService = new FormService();
 export default {
     mounted() {
-        const url = process.env.VUE_APP_URL_API_SEARCH_USER;
+        const url = process.env.VUE_APP_URL_API_SEARCH_HASH;
         let link = window.location.href;
         let linkInSubstrings = link.split("=");
         let code = linkInSubstrings[1];
+        this.code = code;
         fetch(process.env.VUE_APP_URL_API + url, {
             method: "POST",
             headers: formService.getHeaders(),
             body: JSON.stringify({
-                recoverCode: code
+                hash: code
             })
         })
         .then(res => {
@@ -77,8 +80,9 @@ export default {
                 password1: '',
                 password2: ''
             },
-            error: '',
-            showSpiner: false
+            error: true,
+            showSpiner: false,
+            code: ''
         }
     },
     methods: {
@@ -101,7 +105,7 @@ export default {
                     headers: formService.getHeaders(),
                     body: JSON.stringify({
                         password: this.form.password1,
-                        recoverCode: this.code
+                        hash: this.code
                     })
                 })
                 .then(res => {
@@ -119,7 +123,7 @@ export default {
                         })
                     }
                     else {
-                        this.$bvToast.toast("Usuario introducido correctamente", {
+                        this.$bvToast.toast("Contraseña actualizada correctamente", {
                             title: "Success",
                             autoHideDelay: 2000,
                             variant: "success",
